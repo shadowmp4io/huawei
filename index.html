@@ -254,6 +254,35 @@ html.tt :not(.tgl):not(.tgl *){transition:background-color .45s ease,color .45s 
 .rg:active::-webkit-slider-thumb{transform:scale(1.18)}
 @media(hover:none){.swb:hover{transform:none}}
 @media(max-width:560px){.swb{width:40px;height:40px}.cu::after{inset:11px}}
+.hgate{position:fixed;inset:0;z-index:75;display:grid;place-items:center;padding:20px;background:radial-gradient(90% 70% at 80% 0,rgba(255,42,61,.25),transparent 60%),var(--bg);transition:opacity .5s var(--e),transform .5s var(--e)}
+.hgate[hidden]{display:none}.hgate.out{opacity:0;transform:scale(1.03);pointer-events:none}
+.hgmod{background:rgba(8,8,12,.55);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);animation:hgin .35s var(--e)}
+html.hgl,html.hgo{overflow:hidden}html.hgl body>:not(.hgate){visibility:hidden}
+.hgc{width:min(100%,380px);text-align:center;background:var(--cd);border-radius:28px;padding:30px 24px 24px;box-shadow:0 30px 80px -20px rgba(0,0,0,.45),inset 0 0 0 1px var(--ln);animation:hgin .7s var(--sp) both}
+@keyframes hgin{from{opacity:0;transform:translate3d(0,18px,0) scale(.94)}}
+.hgc .lgo{width:84px;height:84px;margin-bottom:12px}
+.hgc h2{font-size:1.25rem;font-weight:800;letter-spacing:-.02em;margin:4px 0 6px}
+.hgc p{color:var(--mu);font-size:14px;line-height:1.5;margin:0 0 16px}
+.hgs{display:none}
+#hg[data-s=load] .s-load,#hg[data-s=ok] .s-ok,#hg[data-s=no] .s-no{display:block;animation:hgin .45s var(--e) both}
+.hgb{height:6px;border-radius:99px;background:var(--ln);overflow:hidden;margin:6px 4px 0}
+.hgb i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#b8000e,#ff3d4f);animation:hgbar var(--gt,2s) cubic-bezier(.4,0,.2,1) forwards}
+@keyframes hgbar{to{width:100%}}
+.hgk{width:64px;height:64px;margin-bottom:10px;fill:none;stroke:#16a34a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}.hgk.x{stroke:#e11d48}
+.hgk circle{stroke-dasharray:145;stroke-dashoffset:145;animation:hgd .6s var(--e) forwards}
+.hgk path{stroke-dasharray:50;stroke-dashoffset:50;animation:hgd .45s var(--e) .35s forwards}
+@keyframes hgd{to{stroke-dashoffset:0}}
+#hgf{display:grid;gap:10px;text-align:left}#hgf label{font-size:13px;font-weight:700;color:var(--mu)}
+#hgi{font:inherit;font-size:28px;font-weight:800;letter-spacing:.5em;text-align:center;padding:14px 8px 14px 18px;border:0;border-radius:16px;background:var(--bg);color:var(--ink);box-shadow:inset 0 0 0 1px var(--ln);outline:0;width:100%;transition:box-shadow .3s var(--e)}
+#hgi:focus{box-shadow:inset 0 0 0 2px var(--r)}
+#hge{color:#e11d48;font-size:13px;font-weight:600;min-height:16px;text-align:center}
+#hg.shk .hgc{animation:hgsh .45s}
+@keyframes hgsh{20%{transform:translateX(-10px)}40%{transform:translateX(9px)}60%{transform:translateX(-6px)}80%{transform:translateX(3px)}}
+.hgcode{font-size:2.4rem;font-weight:800;letter-spacing:.12em;font-variant-numeric:tabular-nums;margin:6px 0 14px;background:linear-gradient(135deg,#ff3d4f,#b8000e);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hgmod .hgb i{animation:none;width:100%;transition:width 1s linear}
+.hgmod small{display:block;color:var(--mu);font-size:12px;margin:10px 0 16px}.hgmod .act{padding:0 0 10px}
+.bt.ic.shr{display:none}html[data-hw] .bt.ic.shr{display:grid}
+.shr svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .nav button{touch-action:manipulation}
 .nav::before{transition:transform .5s var(--sp)}
 #sc{will-change:transform}
@@ -265,6 +294,8 @@ html.tt :not(.tgl):not(.tgl *){transition:background-color .45s ease,color .45s 
 </head>
 <body data-v="e">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="hbg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#b8000e"/><stop offset="1" stop-color="#ff3d4f"/></linearGradient><linearGradient id="hbw" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff"/></linearGradient></defs></svg>
+<div id="hg" class="hgate" data-s="load" role="dialog" aria-modal="true" aria-label="Vérification de l’appareil"><div class="hgc"><em data-logo></em><div class="hgs s-load"><h2>Vérification de l’appareil</h2><p id="hgp">Analyse de votre navigateur…</p><div class="hgb"><i></i></div></div><div class="hgs s-ok"><svg class="hgk" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="23"/><path d="M15 27l8 8 14-16"/></svg><h2 id="hgot">Appareil Huawei reconnu</h2><p id="hgop">Accès autorisé. Bienvenue !</p></div><div class="hgs s-no"><svg class="hgk x" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="23"/><path d="M18 18l16 16M34 18L18 34"/></svg><h2>Appareil non compatible</h2><p id="hgd"></p><form id="hgf" autocomplete="off"><label for="hgi">Code d’accès à 6 chiffres</label><input id="hgi" inputmode="numeric" pattern="[0-9]*" maxlength="6" placeholder="••••••" autocomplete="one-time-code"><button class="bt p" type="submit">Valider le code</button><small id="hge"></small></form></div></div></div>
+<div id="hgm" class="hgate hgmod" hidden><div class="hgc"><h2>Accès temporaire</h2><p>Partagez ce code : il ouvre HarmonyBill sur un autre appareil.</p><div class="hgcode" id="hgmc">000 000</div><div class="hgb"><i id="hgmp"></i></div><small id="hgmt"></small><div class="act"><button class="bt p" data-a="shs" type="button">Partager</button><button class="bt" data-a="shy" type="button">Copier</button></div><button class="bt s" data-a="shx" type="button">Fermer</button></div></div>
 <header class="hero" id="hero"><aside class="hl" aria-hidden="true"><em data-logo data-w></em></aside>
 <div>
 <div class="hbr"><em data-logo data-w></em><span>HarmonyBill</span></div>
@@ -277,7 +308,7 @@ html.tt :not(.tgl):not(.tgl *){transition:background-color .45s ease,color .45s 
 </header>
 <div class="top" id="app"><div>
 <div class="br"><em data-logo></em><span>HarmonyBill</span></div><b class="tot" id="tot"></b>
-<button class="bt ic tgl" data-a="th" type="button" aria-label="Changer de thème" aria-pressed="false"><svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><mask id="tm"><rect width="24" height="24" fill="#fff"/><circle class="mc" cx="18" cy="7" r="7" fill="#000"/></mask><circle class="co" cx="12" cy="12" r="8" fill="currentColor" mask="url(#tm)"/><path class="ry" d="M12 4.4V1.8M17.4 6.6l1.8-1.8M19.6 12h2.6M17.4 17.4l1.8 1.8M12 19.6v2.6M6.6 17.4l-1.8 1.8M4.4 12H1.8M6.6 6.6 4.8 4.8"/></svg></button><button class="bt p" data-a="dl" type="button">Télécharger</button>
+<button class="bt ic shr" data-a="shr" type="button" aria-label="Partager l’accès temporaire"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3M8 7l4-4 4 4M5 12v7h14v-7"/></svg></button><button class="bt ic tgl" data-a="th" type="button" aria-label="Changer de thème" aria-pressed="false"><svg class="ti" viewBox="0 0 24 24" aria-hidden="true"><mask id="tm"><rect width="24" height="24" fill="#fff"/><circle class="mc" cx="18" cy="7" r="7" fill="#000"/></mask><circle class="co" cx="12" cy="12" r="8" fill="currentColor" mask="url(#tm)"/><path class="ry" d="M12 4.4V1.8M17.4 6.6l1.8-1.8M19.6 12h2.6M17.4 17.4l1.8 1.8M12 19.6v2.6M6.6 17.4l-1.8 1.8M4.4 12H1.8M6.6 6.6 4.8 4.8"/></svg></button><button class="bt p" data-a="dl" type="button">Télécharger</button>
 </div></div>
 <main class="app">
 <div class="ed" id="ed"></div>
@@ -290,6 +321,7 @@ html.tt :not(.tgl):not(.tgl *){transition:background-color .45s ease,color .45s 
 <div class="md" id="md" aria-hidden="true"><div class="mb" data-a="cm"></div><div class="sheet" role="dialog" aria-modal="true" aria-label="Télécharger"><i class="gr"></i><h3>Télécharger</h3><div class="qs" role="group" aria-label="Qualité"><button type="button" data-a="q" data-q="2">Standard</button><button type="button" data-a="q" data-q="3">Haute</button><button type="button" data-a="q" data-q="4">Maximale</button></div><button class="oc" data-a="pdf" type="button"><span><b>PDF</b><small>Parfait pour envoyer ou imprimer</small></span></button><button class="oc" data-a="png" type="button"><span><b>PNG</b><small>Image nette, idéale pour les messageries</small></span></button><button class="oc" data-a="jpg" type="button"><span><b>JPG</b><small>Image légère, facile à partager</small></span></button></div></div>
 <div class="tp" id="tp" role="status"></div>
 <script>
+try{if(!(+localStorage.getItem('hba')>Date.now()))document.documentElement.classList.add('hgl')}catch(x){document.documentElement.classList.add('hgl')}
 (()=>{const r=document.documentElement,m=matchMedia('(prefers-color-scheme:dark)'),g=()=>{try{return localStorage.getItem('fth')}catch(e){return null}};r.dataset.theme=g()||(m.matches?'dark':'light');m.addEventListener?.('change',e=>{if(!g())r.dataset.theme=e.matches?'dark':'light'})})();
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const esc=v=>String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -384,7 +416,7 @@ else if(a==='dup'){const i=+b.closest('.ln').dataset.i;S.lines.splice(i+1,0,clon
 else if(a==='nx'){S.num=S.num.replace(/\d+(?!.*\d)/,m=>String(+m+1).padStart(m.length,'0'));upd();sched();toast('Numéro '+S.num)}
 else if(a==='sv')store((S.type+'-'+S.num).replace(/[^\w\-]+/g,'_')+'.json',new Blob([JSON.stringify(S)],{type:'application/json'}));
 else if(a==='sw'){S.ac=b.dataset.c;upd();sched()}
-else if(a==='th'){const r=document.documentElement,d=r.dataset.theme==='dark'?'light':'dark';r.classList.add('tt');r.dataset.theme=d;b.setAttribute('aria-pressed',d==='dark');try{localStorage.setItem('fth',d)}catch(e){}clearTimeout(b._t);b._t=setTimeout(()=>r.classList.remove('tt'),520)}
+else if(a==='shr')hgShare();else if(a==='shs')hgSend();else if(a==='shy')hgCopy();else if(a==='shx')hgClose();else if(a==='th'){const r=document.documentElement,d=r.dataset.theme==='dark'?'light':'dark';r.classList.add('tt');r.dataset.theme=d;b.setAttribute('aria-pressed',d==='dark');try{localStorage.setItem('fth',d)}catch(e){}clearTimeout(b._t);b._t=setTimeout(()=>r.classList.remove('tt'),520)}
 else if(a==='add'){S.lines.push({d:'',q:1,u:'',p:0,t:S.lines.at(-1)?.t??20,r:0});rl();sched();$$('.ln').at(-1).querySelector('textarea').focus()}
 else if(a==='del'){const e=b.closest('.ln'),i=+e.dataset.i;if(e.classList.contains('gone'))return;e.classList.add('gone');setTimeout(()=>{S.lines.splice(i,1);rl();sched()},240)}
 else if(a==='rl'){S.logo='';$('#lgf').value='';sched()}
@@ -456,9 +488,27 @@ const PA=[-78,-56,-34,-11,11,34,56,78],PK=[.64,.86,.97,1,1,.97,.86,.64];
 const LOGO=`<svg viewBox="0 0 100 100" aria-hidden="true"><g transform="translate(50 80)">${PA.map((a,i)=>`<g transform="rotate(${a}) scale(${PK[i]})"><path class="hbp" style="--i:${Math.abs(i-3.5)-.5}" d="M0 0C-6-13-8-33 0-44C8-33 6-13 0 0Z"/></g>`).join('')}</g></svg>`;
 $$('[data-logo]').forEach(e=>{e.innerHTML=LOGO;e.classList.add('lgo');if('w' in e.dataset)e.classList.add('lgw')});
 function imp(f){f.text().then(x=>{try{const v=JSON.parse(x);if(!v||typeof v!=='object'||Array.isArray(v))throw 0;const d=clone(D);for(const k in v)if(k in d)d[k]=v[k]&&typeof v[k]==='object'&&!Array.isArray(v[k])?{...d[k],...v[k]}:v[k];['disc','ship','shipT','dep','rad'].forEach(k=>d[k]=+d[k]||0);d.fs=+d.fs||12;if(!/^#[0-9a-f]{6}$/i.test(d.ac))d.ac=D.ac;d.lines=(Array.isArray(v.lines)&&v.lines.length?v.lines:D.lines).map(l=>({d:String(l.d??''),q:+l.q||0,u:String(l.u??''),p:+l.p||0,t:+l.t||0,r:+l.r||0}));S=d;Z=1;upd();draw();saveNow();toast('Document importé : '+S.type+' '+S.num)}catch(e){toast('Fichier invalide')}})}
+const hgS='hb·harmony·2026',hgW=6e5,hgR=document.documentElement,hgG=$('#hg');
+const hgh=s=>{let a=0xdeadbeef,b=0x41c6ce57;for(let i=0;i<s.length;i++){const c=s.charCodeAt(i);a=Math.imul(a^c,2654435761);b=Math.imul(b^c,1597334677)}a=Math.imul(a^a>>>16,2246822507)^Math.imul(b^b>>>13,3266489909);b=Math.imul(b^b>>>16,2246822507)^Math.imul(a^a>>>13,3266489909);return 4294967296*(2097151&b)+(a>>>0)};
+const hcd=n=>String(hgh(hgS+n)%1e6).padStart(6,'0'),hwn=()=>Math.floor(Date.now()/hgW),hok=v=>v===hcd(hwn())||v===hcd(hwn()-1);
+async function isHw(){const u=navigator.userAgent;let m='';try{m=(await navigator.userAgentData?.getHighEntropyValues?.(['model']))?.model||''}catch(e){}return /huawei|harmonyos|hmscore/i.test(u+' '+m)||/^[A-Z]{3}\d?-[A-Z]{1,2}\d{2}/.test(m)||/;\s*[A-Z]{3}\d?-[A-Z]{1,2}\d{2}[A-Z]?[\s;)]/.test(u)}
+function hgFin(){hgG.classList.add('out');setTimeout(()=>{hgG.hidden=true;hgR.classList.remove('hgl')},550)}
+function hgDeny(){const m=/android|iphone|ipad|mobile/i.test(navigator.userAgent);$('#hgd').textContent=(m?'Votre appareil n’est pas un Huawei.':'Cet ordinateur n’a pas pu être vérifié comme appareil Huawei.')+' Entrez le code à 6 chiffres d’un appareil Huawei pour obtenir un accès temporaire.';hgG.dataset.s='no';if(matchMedia('(hover:hover)').matches)setTimeout(()=>$('#hgi').focus(),400)}
+function hgSub(){const v=$('#hgi').value;if(v.length===6&&hok(v)){try{localStorage.setItem('hba',Date.now()+72e5)}catch(x){}$('#hgot').textContent='Accès temporaire accordé';$('#hgop').textContent='Valable 2 heures sur cet appareil.';hgG.dataset.s='ok';setTimeout(hgFin,1000)}else{$('#hge').textContent='Code incorrect ou expiré';hgG.classList.remove('shk');void hgG.offsetWidth;hgG.classList.add('shk');$('#hgi').select()}}
+$('#hgi').addEventListener('input',e=>{const t=e.target;t.value=t.value.replace(/\D/g,'').slice(0,6);$('#hge').textContent='';if(t.value.length===6)hgSub()});
+$('#hgf').addEventListener('submit',e=>{e.preventDefault();hgSub()});
+(async()=>{let a=0;try{a=+localStorage.getItem('hba')>Date.now()}catch(e){}if(a){hgG.hidden=true;hgR.classList.remove('hgl');return}const T=1400+Math.random()*1500,t0=performance.now();hgG.style.setProperty('--gt',T+'ms');['Analyse de votre navigateur…','Lecture du modèle de l’appareil…','Vérification du système…'].forEach((t,i)=>setTimeout(()=>{$('#hgp').textContent=t},T*i/3));const h=await isHw();await new Promise(r=>setTimeout(r,Math.max(0,T-(performance.now()-t0))));if(h){hgR.dataset.hw='1';hgG.dataset.s='ok';setTimeout(hgFin,950)}else hgDeny()})();
+let hgT;const hgUp=()=>{const l=hgW-Date.now()%hgW;$('#hgmc').textContent=hcd(hwn()).replace(/(\d{3})(\d{3})/,'$1 $2');$('#hgmp').style.width=l/hgW*100+'%';$('#hgmt').textContent='Le code change dans '+Math.ceil(l/6e4)+' min · l’accès dure 2 h après la saisie'};
+function hgShare(){$('#hgm').hidden=false;hgR.classList.add('hgo');hgUp();clearInterval(hgT);hgT=setInterval(hgUp,1000)}
+function hgClose(){clearInterval(hgT);$('#hgm').hidden=true;hgR.classList.remove('hgo')}
+const hgMsg=()=>`HarmonyBill — code d’accès temporaire : ${hcd(hwn())}\nValable quelques minutes. Saisissez-le sur ${location.href.split('#')[0]}`;
+function hgCopy(){(navigator.clipboard?.writeText(hgMsg())||Promise.reject()).then(()=>toast('Message copié'),()=>toast('Copie impossible'))}
+function hgSend(){if(navigator.share)navigator.share({title:'HarmonyBill',text:hgMsg()}).catch(e=>{if(e&&e.name!=='AbortError')hgCopy()});else hgCopy()}
+$('#hgm').addEventListener('click',e=>{if(e.target.id==='hgm')hgClose()});addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#hgm').hidden)hgClose()});
 addEventListener('pagehide',saveNow);document.addEventListener('visibilitychange',()=>{if(document.hidden)saveNow()});
 $('[data-a=th]').setAttribute('aria-pressed',document.documentElement.dataset.theme==='dark');
 upd();draw();enh();
 </script>
 </body>
 </html>
+ 
