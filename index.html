@@ -200,8 +200,24 @@ body[data-v=p] .nav::before{transform:translateX(100%)}
 @keyframes hbl{from{transform:scale(0);opacity:0}}
 @keyframes hbr{50%{transform:scale(1.07)}}
 .br em{filter:drop-shadow(0 4px 8px rgba(199,0,11,.35))}
-.hb{display:flex;align-items:center;gap:12px;font-weight:800;font-size:clamp(1.15rem,3.2vw,1.5rem);letter-spacing:-.02em;margin-bottom:clamp(22px,5vw,40px);animation:up 1s var(--e) both}
-.hb .lgo{width:clamp(46px,10vw,64px);height:clamp(46px,10vw,64px);filter:drop-shadow(0 6px 14px rgba(0,0,0,.25))}
+.hbr{display:flex;align-items:center;gap:14px;font-weight:800;font-size:clamp(1.5rem,4.4vw,2.3rem);letter-spacing:-.03em;margin-bottom:clamp(22px,5vw,40px);animation:up 1s var(--e) both}
+.hbr .lgo{width:clamp(64px,14vw,96px);height:clamp(64px,14vw,96px)}
+.hl{position:absolute;top:clamp(18px,4vw,46px);right:clamp(14px,5vw,72px);width:clamp(96px,22vw,280px);aspect-ratio:1;pointer-events:none;will-change:transform;animation:hli 1.2s var(--sp) .15s backwards,hlf 9s ease-in-out 1.4s infinite}
+.hl .lgo{position:relative;width:100%;height:100%}
+.hl::before{content:"";position:absolute;inset:-24%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.3),transparent);animation:hlg 6s ease-in-out infinite}
+@keyframes hli{from{opacity:0;transform:translate3d(0,-24px,0) scale(.6) rotate(-12deg)}}
+@keyframes hlf{50%{transform:translate3d(0,12px,0) rotate(2.5deg)}}
+@keyframes hlg{50%{opacity:.5;transform:scale(1.12)}}
+.hero.off .hl,.hero.off .hl::before,.hero.off .hbp{animation-play-state:paused}
+.act{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:6px 0 12px}
+.act .bt{display:flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 12px}
+.act svg{width:17px;height:17px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s var(--sp)}
+.act .bt:hover svg{transform:translateY(-2px) scale(1.12)}.act .bt:active svg{transform:scale(.85)}
+.act .bt[data-a=sv]{background:var(--r);color:#fff;box-shadow:0 8px 20px -8px rgba(199,0,11,.7)}
+.act .bt[data-a=rs]{color:var(--r)}
+@media(hover:none){.act .bt:hover svg{transform:none}}
+.nav{transform:translate3d(-50%,0,0);will-change:transform;view-transition-name:none}
+@media(max-width:900px){.ed,.stage{view-transition-name:none}.app{min-height:100vh;min-height:100lvh;overflow-anchor:none}.stage{height:calc(100svh - 156px)}}
 :root{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 html.tt :not(.tgl):not(.tgl *){transition:background-color .45s ease,color .45s ease,border-color .45s ease,box-shadow .45s ease,fill .45s ease!important}
 .tgl{width:40px;height:40px;color:#f59e0b;overflow:hidden}
@@ -214,8 +230,8 @@ html.tt :not(.tgl):not(.tgl *){transition:background-color .45s ease,color .45s 
 :root[data-theme=dark] .ti .co{transform:scale(1)}
 :root[data-theme=dark] .ti .mc{transform:none}
 :root[data-theme=dark] .ti .ry{transform:rotate(90deg) scale(.3);opacity:0}
-.br span,.hb span{background:linear-gradient(100deg,var(--b) 35%,var(--h) 50%,var(--b) 65%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shn 7s ease-in-out infinite}
-.br span{--b:var(--ink);--h:#ff3d4f}.hb span{--b:#fff;--h:#ffc2c8}
+.br span,.hbr span{background:linear-gradient(100deg,var(--b) 35%,var(--h) 50%,var(--b) 65%) 0 0/250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shn 7s ease-in-out infinite}
+.br span{--b:var(--ink);--h:#ff3d4f}.hbr span{--b:#fff;--h:#ffc2c8}
 @keyframes shn{0%,15%{background-position:100% 0}60%,100%{background-position:0 0}}
 .cp{display:flex;flex-wrap:wrap;align-items:center;gap:12px;padding:4px 0}
 .swb{transition:transform .6s var(--sp),box-shadow .35s var(--e)}
@@ -249,9 +265,9 @@ html.tt :not(.tgl):not(.tgl *){transition:background-color .45s ease,color .45s 
 </head>
 <body data-v="e">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="hbg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#b8000e"/><stop offset="1" stop-color="#ff3d4f"/></linearGradient><linearGradient id="hbw" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff"/></linearGradient></defs></svg>
-<header class="hero" id="hero">
+<header class="hero" id="hero"><aside class="hl" aria-hidden="true"><em data-logo data-w></em></aside>
 <div>
-<div class="hb"><em data-logo data-w></em><span>HarmonyBill</span></div>
+<div class="hbr"><em data-logo data-w></em><span>HarmonyBill</span></div>
 <h1>Des factures nettes, prêtes à envoyer.</h1>
 <p>Modifiez chaque détail, regardez la page A4 se composer en direct, puis exportez en PDF, PNG ou JPG haute définition.</p>
 <div class="row"><a class="bt p" href="#app">Créer ma facture</a><span class="pl">A4 jusqu’à 300 dpi</span><span class="pl">Sans inscription</span><span class="pl">Données gardées sur votre appareil</span></div>
@@ -316,7 +332,7 @@ if(t==='s')i=`<select data-k="${k}">${o.map(x=>{const[v,n]=Array.isArray(x)?x:[x
 else if(t==='a')i=`<textarea data-k="${k}" rows="3"></textarea>`;
 else i=`<input data-k="${k}" type="${t}" ${t==='number'?'inputmode="decimal" step="any" min="0"':''} autocomplete="off">`;
 return`<label class="f${['a','l','k'].includes(t)||W.test(k)?' w':''}">${l}${i}</label>`}
-$('#ed').innerHTML=FS.map(([t,f],n)=>`<section class="ac${n?'':' open'}"><button class="ah" type="button" data-a="ac" aria-expanded="${!n}">${t}</button><div class="ab"><div class="in">${t==='Lignes'?'<div id="ls"></div><div style="padding:0 18px 18px"><button class="bt p" data-a="add" type="button">Ajouter une ligne</button></div>':'<div class="fg">'+f.map(x=>fld(...x)).join('')+'</div>'}</div></div></section>`).join('')+'<div class="row act"><button class="bt" data-a="nx" type="button">Numéro suivant</button><button class="bt" data-a="sv" type="button">Sauvegarder</button><label class="bt">Importer<input id="jf" type="file" accept=".json,application/json"></label><button class="bt" data-a="rs" type="button">Réinitialiser</button></div>';
+$('#ed').innerHTML=FS.map(([t,f],n)=>`<section class="ac${n?'':' open'}"><button class="ah" type="button" data-a="ac" aria-expanded="${!n}">${t}</button><div class="ab"><div class="in">${t==='Lignes'?'<div id="ls"></div><div style="padding:0 18px 18px"><button class="bt p" data-a="add" type="button">Ajouter une ligne</button></div>':'<div class="fg">'+f.map(x=>fld(...x)).join('')+'</div>'}</div></div></section>`).join('')+'<div class="act"><button class="bt" data-a="nx" type="button"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Numéro suivant</button><button class="bt" data-a="sv" type="button"><svg viewBox="0 0 24 24"><path d="M5 4h11l3 3v13H5zM8 4v5h7M8 20v-6h8v6"/></svg>Sauvegarder</button><label class="bt"><svg viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Importer<input id="jf" type="file" accept=".json,application/json"></label><button class="bt" data-a="rs" type="button"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 3-6.2M4 4v4h4"/></svg>Réinitialiser</button></div>';
 function rl(){$('#ls').innerHTML=S.lines.map((l,i)=>`<div class="ln" data-i="${i}"><label class="f d">Description<textarea data-f="d" rows="2">${esc(l.d)}</textarea></label><label class="f">Quantité<input data-f="q" type="number" inputmode="decimal" step="any" min="0" value="${l.q}"></label><label class="f">Unité<input data-f="u" value="${esc(l.u)}"></label><label class="f">Prix HT<input data-f="p" type="number" inputmode="decimal" step="any" min="0" value="${l.p}"></label><label class="f">TVA (%)<select data-f="t">${[0,2.1,5.5,8.5,10,20].map(v=>`<option${v==l.t?' selected':''}>${v}</option>`).join('')}</select></label><label class="f">Remise (%)<input data-f="r" type="number" inputmode="decimal" step="any" min="0" value="${l.r}"></label><div class="d2"><b class="lt"></b><span class="row"><button class="bt s" data-a="dup" type="button">Dupliquer</button><button class="bt s x" data-a="del" type="button">Supprimer</button></span></div></div>`).join('')}
 function upd(){queueMicrotask(()=>typeof sy==='function'&&sy());$$('[data-k]').forEach(e=>{const v=get(S,e.dataset.k);e.type==='checkbox'?e.checked=!!v:e.value=v??''});rl()}
 const fm=n=>{try{return new Intl.NumberFormat('fr-FR',{style:'currency',currency:S.cur}).format(n)}catch(e){return n.toFixed(2)}};
@@ -373,7 +389,7 @@ else if(a==='add'){S.lines.push({d:'',q:1,u:'',p:0,t:S.lines.at(-1)?.t??20,r:0})
 else if(a==='del'){const e=b.closest('.ln'),i=+e.dataset.i;if(e.classList.contains('gone'))return;e.classList.add('gone');setTimeout(()=>{S.lines.splice(i,1);rl();sched()},240)}
 else if(a==='rl'){S.logo='';$('#lgf').value='';sched()}
 else if(a==='rs'){S=clone(D);upd();sched();toast('Document réinitialisé')}
-else if(a==='v'){const v=b.dataset.v;if(document.body.dataset.v===v)return;document.documentElement.style.setProperty('--dx',v==='p'?'28px':'-28px');document.body.dataset.v=v;$$('.nav button').forEach(x=>x.classList.toggle('on',x===b));scrollTo({top:$('#app').offsetTop,behavior:'instant'});fit();requestAnimationFrame(fit)}
+else if(a==='v'){const v=b.dataset.v;if(document.body.dataset.v===v)return;const ap=$('#app').offsetTop,go=()=>{document.documentElement.style.setProperty('--dx',v==='p'?'28px':'-28px');document.body.dataset.v=v;$$('.nav button').forEach(x=>x.classList.toggle('on',x===b));fit();requestAnimationFrame(fit)};if(scrollY>ap+2){scrollTo({top:ap,behavior:'instant'});requestAnimationFrame(go)}else go()}
 else if(a==='z'){Z=Z>=2.2?1:Z+.6;fit()}
 else exp(a,b)});
 function toast(m,keep){const t=$('#tp');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);if(!keep)toast.t=setTimeout(()=>t.classList.remove('on'),2800)}
@@ -446,4 +462,3 @@ upd();draw();enh();
 </script>
 </body>
 </html>
- 
